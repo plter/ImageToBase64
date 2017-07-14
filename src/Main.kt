@@ -42,13 +42,13 @@ class Main() {
 
     fun addListeners() {
         app.on("ready", fun() {
-
+            createWindow()
         })
 
         app.on("window-all-closed", fun() {
             // On OS X it is common for applications and their menu bar
             // to stay active until the user quits explicitly with Cmd + Q
-            if (process.platform !== "darwin") {
+            if (process.platform != "darwin") {
                 app.quit()
             }
         })
@@ -56,7 +56,7 @@ class Main() {
         app.on("activate", fun() {
             // On OS X it's common to re-create a window in the app when the
             // dock icon is clicked and there are no other windows open.
-            if (mainWindow === null) {
+            if (mainWindow == null) {
                 createWindow()
             }
         })
